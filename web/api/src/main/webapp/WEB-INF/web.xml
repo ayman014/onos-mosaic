@@ -21,7 +21,7 @@
     <display-name>ONOS REST API v1.0</display-name>
 
     <!--
-    -->
+
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Secured</web-resource-name>
@@ -37,7 +37,7 @@
         <role-name>admin</role-name>
         <role-name>viewer</role-name>
     </security-role>
-
+-->
     <login-config>
         <auth-method>BASIC</auth-method>
         <realm-name>karaf</realm-name>
