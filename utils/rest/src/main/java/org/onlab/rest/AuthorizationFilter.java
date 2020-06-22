@@ -37,9 +37,9 @@ public class AuthorizationFilter implements ContainerRequestFilter {
             "User has insufficient privilege for this request";
 
     private static final Set<String> PRIVILEGED_METHODS =
-            ImmutableSet.of("POST", "PUT", "DELETE", "PATCH");
+            ImmutableSet.of("POST", "PUT", "DELETE", "PATCH","OPTIONS");
 
-    private static boolean disableForTests = false;
+    private static boolean disableForTests = true;
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {

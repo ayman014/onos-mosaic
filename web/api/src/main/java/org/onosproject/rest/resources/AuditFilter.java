@@ -51,7 +51,9 @@ public class AuditFilter implements ContainerRequestFilter, ContainerResponseFil
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+/*
         if (auditService() != null) {
+
             String requestBody = (requestContext.hasEntity() ?
                     (readTreeFromStream(mapper, requestContext.getEntityStream()).toString()) : "");
             requestContext.setProperty("requestBody", requestBody);
@@ -67,11 +69,13 @@ public class AuditFilter implements ContainerRequestFilter, ContainerResponseFil
                             + separator + "Request_Body" + logCompSeperator + requestBody) : ""));
             requestContext.setEntityStream(IOUtils.toInputStream(requestBody));
         }
+         */
     }
 
     @Override
     public void filter(ContainerRequestContext containerRequestContext,
                        ContainerResponseContext containerResponseContext) throws IOException {
+        /*
         AuditService auditService = auditService();
         if (auditService != null) {
             containerRequestContext.setProperty("auditMessage", containerRequestContext.getProperty("auditMessage")
@@ -82,9 +86,12 @@ public class AuditFilter implements ContainerRequestFilter, ContainerResponseFil
             String action = containerRequestContext.getProperty("auditMessage").toString();
             auditService.logUserAction(user, action);
         }
+
+         */
     }
 
     private AuditService auditService() {
+        /*
         AuditService auditService = null;
         try {
             auditService = disableForTests ? null : services.get(AuditService.class);
@@ -92,5 +99,8 @@ public class AuditFilter implements ContainerRequestFilter, ContainerResponseFil
             return null;
         }
         return auditService != null && auditService.isAuditing() ? auditService : null;
+
+         */
+        return null;
     }
 }

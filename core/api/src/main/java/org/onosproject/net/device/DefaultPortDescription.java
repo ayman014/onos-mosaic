@@ -68,6 +68,14 @@ public class DefaultPortDescription extends AbstractDescription
         this.type = Type.COPPER;
     }
 
+    public DefaultPortDescription(PortNumber pn,Boolean isEnabled) {
+        this.number = pn;
+        this.isEnabled = isEnabled;
+        this.isRemoved = false;
+        this.portSpeed = DEFAULT_SPEED;
+        this.type = Type.COPPER;
+    }
+
     @Override
     public PortNumber portNumber() {
         return number;
